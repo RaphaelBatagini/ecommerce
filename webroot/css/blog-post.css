@@ -82,3 +82,23 @@ div.message.hidden {
     width: 90px;
     height: 80px;
 }
+
+.product-img-container {
+    text-align: center;
+}
+
+.product-img-container:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;  /* vertical alignment of the inline element */
+    height: 100%;
+}
+
+.product-img-container img {
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    max-height: 95%;
+    max-width: 95%;
+    vertical-align: middle;
+}

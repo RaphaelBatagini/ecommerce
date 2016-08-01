@@ -9,18 +9,18 @@
         <div class="col-md-6 col-sm-12">
         <ul class="bxslider">
             <?php if(file_exists($path.'1.jpg')): ?>
-                <li><img src="/<?= $path ?>1.jpg" width="400px" height="300px" /></li>
+                <li class="product-img-container" style="height: 300px"><img src="/<?= $path ?>1.jpg"/></li>
             <?php else:?>
-                <li><img src="/img/noimage.jpg" width="400px" height="300px" /></li>
+                <li class="product-img-container" style="height: 300px"><img src="/img/noimage.jpg"/></li>
             <?php endif; ?>
             <?php if(file_exists($path.'2.jpg')): ?>
-                <li><img src="/<?= $path ?>2.jpg" width="400px" height="300px" /></li>
+                <li class="product-img-container" style="height: 300px"><img src="/<?= $path ?>2.jpg"/></li>
             <?php endif; ?>
             <?php if(file_exists($path.'3.jpg')): ?>
-                <li><img src="/<?= $path ?>3.jpg" width="400px" height="300px" /></li>
+                <li class="product-img-container" style="height: 300px"><img src="/<?= $path ?>3.jpg"/></li>
             <?php endif; ?>
             <?php if(file_exists($path.'4.jpg')): ?>
-                <li><img src="/<?= $path ?>4.jpg" width="400px" height="300px" /></li>
+                <li class="product-img-container" style="height: 300px"><img src="/<?= $path ?>4.jpg"/></li>
             <?php endif; ?>
         </ul>
         <div class="bx-pager">

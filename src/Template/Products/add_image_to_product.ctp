@@ -12,7 +12,9 @@
 			    $path = 'img/noimage.jpg';
 			}
 		?>
-		<img src="/<?php echo $path; ?>" class="product-img" width="400px" height="300px">
+		<div class="product-img-container" style="height: 300px">
+			<img src="/<?php echo $path; ?>" class="product-img">
+		</div>
 		<form action="/products/save-image-to-product" method="post" enctype="multipart/form-data">
 			<input type="file" name="product_<?php echo $product->id; ?>_img_1">
 			<br>
@@ -28,7 +30,9 @@
 			    $path = 'img/noimage.jpg';
 			}
 		?>
-		<img src="/<?php echo $path; ?>" class="product-img" width="400px" height="300px">
+		<div class="product-img-container" style="height: 300px">
+			<img src="/<?php echo $path; ?>" class="product-img">
+		</div>
 		<form action="/products/save-image-to-product" method="post" enctype="multipart/form-data">
 			<input type="file" name="product_<?php echo $product->id; ?>_img_2">
 			<br>
@@ -47,7 +51,9 @@
 			    $path = 'img/noimage.jpg';
 			}
 		?>
-		<img src="/<?php echo $path; ?>" class="product-img" width="400px" height="300px">
+		<div class="product-img-container" style="height: 300px">
+			<img src="/<?php echo $path; ?>" class="product-img">
+		</div>
 		<form action="/products/save-image-to-product" method="post" enctype="multipart/form-data">
 			<input type="file" name="product_<?php echo $product->id; ?>_img_3">
 			<br>
@@ -63,7 +69,9 @@
 			    $path = 'img/noimage.jpg';
 			}
 		?>
-		<img src="/<?php echo $path; ?>" class="product-img" width="400px" height="300px">
+		<div class="product-img-container" style="height: 300px">
+		<img src="/<?php echo $path; ?>" class="product-img">
+		</div>
 		<form action="/products/save-image-to-product" method="post" enctype="multipart/form-data">
 			<input type="file" name="product_<?php echo $product->id; ?>_img_4">
 			<br>

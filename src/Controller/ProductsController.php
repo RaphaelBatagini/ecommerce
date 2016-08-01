@@ -1,7 +1,10 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
+
+require_once(ROOT . DS . 'vendor' . DS . 'wideimage' . DS . 'WideImage.php');
 
 /**
  * Products Controller
@@ -212,7 +215,9 @@ class ProductsController extends AppController
                 //$extension = end($nameArray);
                 $uploadfile = $uploaddir . "$productImg.jpg";
 
-                if (move_uploaded_file($_FILES[$productImg]['tmp_name'], $uploadfile)) {
+                \WideImage::load($_FILES[$productImg]['tmp_name'])->resize(400,300)->saveToFile($uploadfile);
+
+                if (file_exists($uploadfile)) {
                     $this->Flash->success(__('Upload realizado com sucesso.'));
                     return $this->redirect(['action' => 'add-image-to-product', explode('_', $productImg)[1]]);                
                 } 

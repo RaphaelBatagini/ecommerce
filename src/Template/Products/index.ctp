@@ -9,11 +9,13 @@
     <?php foreach ($products as $product): ?>
             <div class="col-md-4 col-sm-6 hero-feature">
                 <div class="thumbnail">
+                    <div class="product-img-container" style="height: 200px">
                     <?php if(file_exists('img/products/product_' . $product->id . '_img_1.jpg')): ?>
                         <img class="img-responsive" src="/<?= 'img/products/product_' . $product->id . '_img_1.jpg'; ?>" alt="">
                     <?php else:?>
                         <img class="img-responsive" src="/img/noimage.jpg" alt="">
                     <?php endif; ?>
+                    </div>
                     <div class="caption">
                         <h4><?= $this->Html->link($product->name, ['action' => 'view', $product->id]) ?></h4>
                         <!-- <p><span class="glyphicon glyphicon-time"></span> <?php // echo $product->created->format('l, d/m/Y H:i') ?></p> -->
