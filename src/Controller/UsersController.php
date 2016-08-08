@@ -47,12 +47,16 @@ class UsersController extends AppController
 
         $this->loadModel('Categories');
         $categories = $this->paginate($this->Categories);
-        //$searchs = $this->paginate($this->Products);
+
+        $this->loadModel('Contacts');
+        $contacts = $this->paginate($this->Contacts);
 
         $this->set(compact('products'));
         $this->set('_serialize', ['products']);
         $this->set(compact('categories'));
         $this->set('_serialize', ['categories']);
+        $this->set(compact('contacts'));
+        $this->set('_serialize', ['contacts']);
     }
 
     /**

@@ -72,8 +72,13 @@ class AppController extends Controller
 
         $this->loadModel('Categories');
         $categories = $this->Categories->find('all')->toArray();
+
         $this->set(compact('categories'));
 
+        $this->loadModel('Contacts');
+        $contacts = $this->Contacts->find('all')->toArray();
+
+        $this->set(compact('contacts'));
     }
 
     public function beforeFilter(Event $event)

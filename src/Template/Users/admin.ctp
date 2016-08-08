@@ -2,6 +2,7 @@
 <ul class="nav nav-tabs">
 	<li class="active"><a data-toggle="pill" href="#products">Produtos</a></li>
 	<li><a data-toggle="pill" href="#categories">Categorias</a></li>
+	<li><a data-toggle="pill" href="#contacts">Contatos</a></li>
 	<li><a data-toggle="pill" href="#searchs">Relatórios de busca</a></li>
 </ul>
 <br>
@@ -86,6 +87,50 @@
                                 ['confirm' => 'Tem certeza?', 'class' => 'btn btn-danger'])
                             ?>                          
                             </td>
+				</tr>
+				<?php endforeach;?>
+		    </tbody>
+		  </table>
+		<?php endif;?>	
+	</div>
+
+	<div id="contacts" class="tab-pane fade">
+		<h3>Contatos</h3>
+		<?= $this->Html->link(
+            'Adicionar novo',
+            ['controller' => 'Contacts','action' => 'add'],
+            ['class' => 'btn btn-info'])
+        ?>
+		<?php if (count($contacts) == 0): ?>
+			<p>Nenhum contato encontrado!</p>
+		<?php else: ?>
+			<table class="table">
+			    <thead>
+					<tr>
+						<th>Código</th>
+						<th>Valor</th>
+						<th>Tipo</th>
+						<th>Ações</th>
+					</tr>
+			    </thead>
+		    <tbody>
+		    	<?php foreach($contacts as $contact): ?>
+				<tr>
+					<td><?= $contact->id; ?></td>
+					<td><?= $contact->value; ?></td>
+					<td><?= $contact->type == 'whatsapp' ? 'WhatsApp' : ($contact->type == 'mail' ? 'E-mail' : ($contact->type == 'cellphone' ? 'Celular' : 'Telefone')) ; ?></td>
+					<td>
+						<?= $this->Html->link(
+	                        'Editar',
+	                        ['controller' => 'Contacts','action' => 'edit', $contact->id],
+	                        ['class' => 'btn btn-info']
+	                    ); ?>  
+						<?= $this->Html->link(
+	                        'Deletar',
+	                        ['controller' => 'Contacts','action' => 'delete', $contact->id],
+	                        ['confirm' => 'Tem certeza?', 'class' => 'btn btn-danger']
+	                    ); ?>                          
+                    </td>
 				</tr>
 				<?php endforeach;?>
 		    </tbody>

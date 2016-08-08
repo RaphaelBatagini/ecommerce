@@ -136,18 +136,32 @@
 
                 <div class="well">
                     <h4>Contatos</h4>
-                    <p>
-                        <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 
-                        <a href="callto:01934812101">(19) 3481-2101</a>
-                    </p>
-                    <p>
-                        <span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
-                        <a href="callto:019998347689">(19) 99834-7689</a> / WhatsApp
-                    </p>
-                    <p>
-                        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                        <a href="mailto:navautopecas@gmail.com">navautopecas@gmail.com</a>
-                    </p>
+                    <?php foreach ($contacts as $contact): ?>
+                        <?php if ($contact->type == 'phone'): ?>
+                            <p>
+                                <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 
+                                <a href="callto:<?php echo preg_replace( '/[^0-9]/', '', $contact->value ); ?>"><?php echo $contact->value; ?></a>
+                            </p>
+                        <?php endif;?>
+                        <?php if ($contact->type == 'whatsapp'): ?>
+                            <p>
+                                <span class="glyphicon glyphicon-phone" aria-hidden="true"></span> 
+                                <a href="callto:<?php echo preg_replace( '/[^0-9]/', '', $contact->value ); ?>"><?php echo $contact->value; ?> (WhatsApp)</a>
+                            </p>
+                        <?php endif;?>
+                        <?php if ($contact->type == 'cellphone'): ?>
+                            <p>
+                                <span class="glyphicon glyphicon-phone" aria-hidden="true"></span> 
+                                <a href="callto:<?php echo preg_replace( '/[^0-9]/', '', $contact->value ); ?>"><?php echo $contact->value; ?></a>
+                            </p>
+                        <?php endif;?>
+                        <?php if ($contact->type == 'mail'): ?>
+                            <p>
+                                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                                <a href="mailto:<?php echo $contact->value; ?>"><?php echo $contact->value; ?></a>
+                            </p>
+                        <?php endif; ?>
+                <?php endforeach; ?>
                 </div>
 
                
